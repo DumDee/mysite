@@ -1,0 +1,27 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+        <link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous"> -->
+        <title>Изучаем HTML и CSS</title>
+</head>
+<body>
+    {%for s in xox%}
+    <div class = "conteiner">
+        <div class = "card">
+            <a href="#">
+                <img src="media/{{s.image}}"/>
+                <p><audio controls>
+                    <source src="media/{{s.audio}}" type="audio/mpeg">
+                  </audio>
+                </p>
+            </a> 
+            <span class = "words">{{s.artist}}</span>     
+        </div>
+    </div>   
+    {%endfor%}
+</body>
+</html>
+

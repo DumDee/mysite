@@ -1,0 +1,38 @@
+body {
+    margin: 10;
+    background-color: #84adab;
+    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+}
+
+.head{
+    width: unset;
+    background-color:#312d2d;
+    box-shadow: 0 5px 10px;
+}
+
+.conteiner{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    background-color: #312d2d;
+    width: fit-content;
+    margin: 10px auto;
+    padding: 10px;
+    box-shadow: 0 5px 10px;
+    border-radius: 10px;
+}
+
+.words{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    color: floralwhite;
+}
+
+.poster{
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
