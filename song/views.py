@@ -3,7 +3,6 @@ from django.shortcuts import (get_object_or_404,
                               HttpResponseRedirect)
 from django.http.response import HttpResponse
 from .models import Song
-from .forms import SongCreateForm, SongForm
 
 
 
@@ -17,40 +16,40 @@ def song_detail(request, id):
     return render(request, 'SongDetail.html', {'song':s})
 
 
-def song_create(request):
-    if request.method == "GET":
-        return render(request, 'SongCreate.html')
+# def song_create(request):
+#     if request.method == "GET":
+#         return render(request, 'SongCreate.html')
 
-    context ={}
+#     context ={}
   
-    form = SongCreateForm(request.POST or None, request.FILES)
-    if form.is_valid():
-        form.save()
+#     form = SongCreateForm(request.POST or None, request.FILES)
+#     if form.is_valid():
+#         form.save()
           
-    context['form']= form
-    return render(request, "SongCreate.html", context)
+#     context['form']= form
+#     return render(request, "SongCreate.html", context)
 
 
-def song_edit(request, id):
-    if request.method == "GET":
-        s = Song.objects.get(id=id)
-        return render(request, 'SongEdit.html', {'song':s})
+# def song_edit(request, id):
+#     if request.method == "GET":
+#         s = Song.objects.get(id=id)
+#         return render(request, 'SongEdit.html', {'song':s})
 
-    context ={}
-    obj = get_object_or_404(Song, id = id)
+#     context ={}
+#     obj = get_object_or_404(Song, id = id)
 
-    form = SongForm(request.POST or None, request.FILES, instance = obj)
+#     form = SongForm(request.POST or None, request.FILES, instance = obj)
 
-    if form.is_valid():
-        form.save()
-        return HttpResponseRedirect("/"+str(id))
+#     if form.is_valid():
+#         form.save()
+#         return HttpResponseRedirect("/"+str(id))
 
-    context["form"] = form
-    context["song"] = obj
+#     context["form"] = form
+#     context["song"] = obj
 
-    return render(request, "SongEdit.html", context)
+#     return render(request, "SongEdit.html", context)
 
-def song_delete(request, id):
-    s = get_object_or_404(Song, id = id)
-    s.delete()
-    return HttpResponseRedirect("/")
+# def song_delete(request, id):
+#     s = get_object_or_404(Song, id = id)
+#     s.delete()
+#     return HttpResponseRedirect("/")
