@@ -1,21 +1,22 @@
 body {
     margin: 10;
     background-color: #84adab;
-    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
+    /* background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png"); */
 }
 
-.head{
+.head {
     width: unset;
-    background-color:#312d2d;
+    background-color: #312d2d;
     box-shadow: 0 5px 10px;
 }
 
-.conteiner{
+.conteiner {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .card {
+    display: block;
     background-color: #312d2d;
     width: fit-content;
     margin: 10px auto;
@@ -24,15 +25,36 @@ body {
     border-radius: 10px;
 }
 
-.words{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.words {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
     color: floralwhite;
 }
 
-.poster{
+.poster {
     display: block;
     width: 200px;
     height: 200px;
     margin: 0 auto;
+}
+
+.song-edit {
+    display: block;
+    width: 700px;
+    margin: 50px auto;
+}
+
+.form-group {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.mine {
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
 }
