@@ -61,25 +61,18 @@
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="media/{{s.image}}" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">{{s.title}}</h5>
+                <h5 class="card-title">{{s.name}}</h5>
                 <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
 
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{s.artist}}</li>
-                    <li class="list-group-item">{{s.album}}</li>
-                    <li class="list-group-item">{{s.age}}</li>
-                    <!-- <li class="list-group-item"></li> -->
-                </ul>
-
                 <a href="{{s.id}}" class="btn btn-outline-info mine">More...</a>
-                <div class="buttons">
+                <!-- <div class="buttons">
                     <button id="playAudio" class="btn btn-success" onclick="playAudio(this.parentElement)">Play</button>
                     <a href="delete/{{s.id}}" class="btn btn-danger">Delete</a>
                     <a href="edit/{{s.id}}" class="btn btn-warning">Update</a>
                     <audio id="testAudio" hidden src="media/{{s.audio}}" type="audio/mpeg"></audio>
-                    <!-- <source src="media/{{s.audio}}" type="audio/mpeg"> -->
+                    
 
-                </div>
+                </div> -->
 
 
             </div>
