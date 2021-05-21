@@ -12,23 +12,42 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item active">
-                    <a href="/create"><button type="button" class="btn btn-outline-success">Create</button></a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid col-10">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <!-- <div class="collapse navbar-collapse d-flex" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav">
 
-                </li>
+                </ul>
+            </div> -->
+            {% if user.is_authenticated %}
+            <div class="nav-item dropdown d-flex">
+                <span class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{user}}
+                </span>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                    <li><a class="dropdown-item" href="account/signout">Signout</a></li>
+                </ul>
+            </div>
+            {% else %}
+            <ul class="navbar-nav d-flex">
+                <li class="nav-item add-margin"><a href="account/signup" class="btn btn-link">Регистрация</a></li>
+                <li class="nav-item add-margin"><a href="account/signin" class="btn btn-outline-light">Вход</a></li>
+                <!-- <li class="nav-item"><button type="button" class="btn btn-light">Light</button></li> -->
             </ul>
+            <!-- </div> -->
+            {% endif %}
         </div>
     </nav>
+
+
+
+
+
+
     <div class="conteiner">
         {%for s in xox%}
         <!-- <div class="card">
@@ -36,7 +55,7 @@
                 <img src="media/{{s.image}}" />
 
             </a>
-            <div class="words">{{s.artist}}</div>
+                    <div class="words">{{s.artist}}</div>
         </div> -->
 
         <div class="card" style="width: 18rem;">
@@ -68,6 +87,7 @@
         {%endfor%}
     </div>
     <script src="{% static 'js/audio.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 
 </html>

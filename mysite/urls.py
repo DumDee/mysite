@@ -15,6 +15,7 @@ urlpatterns = [
     # path('create', song_create),
     path('account/signin', signin),
     path('account/signup', signup),
+    path('account/signout', signout),
 ]
 
 if settings.DEBUG:
