@@ -4,6 +4,7 @@ import datetime
 class Artist(models.Model):
     name = models.CharField("Название альбома", max_length=255)
     description = models.TextField(blank=True, default="")
+    image = models.ImageField("Изображение", upload_to = "artist_image/", null=True, blank=True)
     def __str__(self):
         return self.name
 

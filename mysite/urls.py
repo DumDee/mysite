@@ -1,3 +1,4 @@
+from comment.views import add_comment
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
@@ -16,6 +17,7 @@ urlpatterns = [
     path('account/signin', signin),
     path('account/signup', signup),
     path('account/signout', signout),
+    path('comment/add/<int:id>', add_comment),
 ]
 
 if settings.DEBUG:
