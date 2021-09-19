@@ -21,6 +21,7 @@ def signup(request):
         return render(request, 'SignUp.html', {'form': form})
 
 def signin(request):
+    breakpoint()
     if request.user.is_authenticated:
         return render(request, 'HomePage.html')
     if request.method == 'POST':

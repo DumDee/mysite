@@ -5,24 +5,20 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{%  static  'css/style.css'  %}">
-    <!-- <link rel="stylesheet" href="{%  static  'css/audio.css'  %}"> -->
+
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <title>Изучаем HTML и CSS</title>
+    <title>MyVibes</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid col-10">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="/">MyVibes</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-            <!-- <div class="collapse navbar-collapse d-flex" id="navbarNavDarkDropdown">
-                <ul class="navbar-nav">
 
-                </ul>
-            </div> -->
             {% if user.is_authenticated %}
             <div class="nav-item dropdown d-flex">
                 <span class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -36,9 +32,7 @@
             <ul class="navbar-nav d-flex">
                 <li class="nav-item add-margin"><a href="account/signup" class="btn btn-link">Регистрация</a></li>
                 <li class="nav-item add-margin"><a href="account/signin" class="btn btn-outline-light">Вход</a></li>
-                <!-- <li class="nav-item"><button type="button" class="btn btn-light">Light</button></li> -->
             </ul>
-            <!-- </div> -->
             {% endif %}
         </div>
     </nav>
@@ -50,31 +44,12 @@
 
     <div class="conteiner">
         {%for s in xox%}
-        <!-- <div class="card">
-            <a href="{{s.id}}">
-                <img src="media/{{s.image}}" />
-
-            </a>
-                    <div class="words">{{s.artist}}</div>
-        </div> -->
 
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="media/{{s.image}}" alt="Card image cap">
+            <img class="card-img-top" src="media/{{s.image}}"  alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">{{s.name}}</h5>
-                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-
-                <a href="{{s.id}}" class="btn btn-outline-info mine">More...</a>
-                <!-- <div class="buttons">
-                    <button id="playAudio" class="btn btn-success" onclick="playAudio(this.parentElement)">Play</button>
-                    <a href="delete/{{s.id}}" class="btn btn-danger">Delete</a>
-                    <a href="edit/{{s.id}}" class="btn btn-warning">Update</a>
-                    <audio id="testAudio" hidden src="media/{{s.audio}}" type="audio/mpeg"></audio>
-                    
-
-                </div> -->
-
-
+                <a href="{{s.id}}" class="btn btn-outline-info mine">Смотреть</a>
             </div>
         </div>
         {%endfor%}
